@@ -1,0 +1,699 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    tools:context=".activity.HomeActivity"
+    tools:ignore="MissingClass">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:gravity="left|center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_semibold"
+            android:gravity="center"
+            android:text="Hacker "
+            android:textColor="@color/black"
+            android:textSize="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_semibold"
+            android:gravity="center"
+            android:text="News"
+            android:textColor="@color/red"
+            android:textSize="16dp" />
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/ic_lyt_border_unselect"
+        android:textSize="13sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/inter_medium"
+        android:iconifiedByDefault="false"
+        android:outlineProvider="background"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp" />
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="32dp"
+        android:overScrollMode="never"
+        android:scrollbarThumbHorizontal="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:saveEnabled="false"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/lytTopStories"
+                android:layout_width="70dp"
+                android:layout_height="32dp"
+                android:background="@drawable/ic_lyt_border"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="6dp">
+
+                <TextView
+                    android:id="@+id/txttop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Top"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/inter_medium"
+                    android:textSize="13dp" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/lytBestStories"
+                android:layout_width="70dp"
+                android:layout_height="32dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/ic_lyt_border"
+                android:fontFamily="@font/inter_medium"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="6dp">
+
+
+                <TextView
+                    android:id="@+id/txtbest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Best"
+                    android:textColor="@color/black"
+                    android:textSize="13dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lytNewStories"
+                android:layout_width="70dp"
+                android:layout_height="32dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/ic_lyt_border"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="6dp">
+
+
+                <TextView
+                    android:id="@+id/txtnew"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_medium"
+                    android:gravity="center"
+                    android:text="New"
+                    android:textColor="@color/black"
+                    android:textSize="13dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lytJobStories"
+                android:layout_width="70dp"
+                android:layout_height="32dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/ic_lyt_border"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="6dp">
+
+
+                <TextView
+                    android:id="@+id/txtjob"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_medium"
+                    android:gravity="center"
+                    android:text="Job"
+                    android:textColor="@color/black"
+                    android:textSize="13dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lytAskStories"
+                android:layout_width="70dp"
+                android:layout_height="32dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/ic_lyt_border"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="6dp">
+
+
+                <TextView
+                    android:id="@+id/txtask"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_medium"
+                    android:gravity="center"
+                    android:text="Shows"
+                    android:textColor="@color/black"
+                    android:textSize="13dp" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/StoryList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:id="@+id/lytNoData"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                 <com.facebook.shimmer.ShimmerFrameLayout
+                     android:id="@+id/shimmer_view_container"
+                     android:layout_width="match_parent"
+                     android:layout_height="match_parent"
+                     android:visibility="gone"
+                     android:layout_centerInParent="true">
+
+                     <LinearLayout
+                         android:layout_width="match_parent"
+                         android:layout_height="match_parent"
+                         android:orientation="vertical">
+
+                         <LinearLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:orientation="vertical">
+
+
+                             <TextView
+                                 android:layout_gravity="center"
+                                 android:layout_width="match_parent"
+                                 android:height="40dp"
+                                 android:textSize="13sp"
+                                 android:textStyle="normal"
+                                 android:background="@drawable/ic_lyt_shimmer"
+                                 android:fontFamily="@font/inter_medium"
+                                 android:layout_height="wrap_content" />
+
+
+                             <LinearLayout
+                                 android:layout_width="match_parent"
+                                 android:layout_height="wrap_content"
+                                 android:layout_marginTop="16dp"
+                                 android:orientation="horizontal">
+
+                                 <TextView
+                                     android:layout_gravity="center"
+                                     android:layout_width="30dp"
+                                     android:textSize="12sp"
+                                     android:fontFamily="@font/inter_regular"
+                                     android:textStyle="normal"
+                                     android:background="@drawable/ic_lyt_shimmer"
+                                     android:layout_height="wrap_content" />
+
+                                 <TextView
+                                     android:layout_gravity="center"
+                                     android:layout_width="match_parent"
+                                     android:textSize="12sp"
+                                     android:layout_marginLeft="4dp"
+                                     android:fontFamily="@font/inter_medium"
+                                     android:textStyle="normal"
+                                     android:layout_weight="1"
+                                     android:background="@drawable/ic_lyt_shimmer"
+                                     android:layout_height="wrap_content" />
+
+                                 <TextView
+                                     android:gravity="right"
+                                     android:layout_width="match_parent"
+                                     android:textSize="12sp"
+                                     android:textStyle="normal"
+                                     android:layout_marginLeft="7dp"
+                                     android:fontFamily="@font/inter_medium"
+                                     android:layout_weight="1"
+                                     android:background="@drawable/ic_lyt_shimmer"
+                                     android:layout_height="wrap_content" />
+
+                             </LinearLayout>
+
+                             <TextView
+                                 android:layout_width="match_parent"
+                                 android:layout_height="1dp"
+                                 android:layout_marginTop="16dp"
+                                 android:background="@drawable/ic_lyt_shimmer"
+                                 />
+
+                         </LinearLayout>
+
+                         <LinearLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:orientation="vertical">
+
+
+                             <TextView
+                                 android:layout_gravity="center"
+                                 android:layout_width="match_parent"
+                                 android:height="40dp"
+                                 android:textSize="13sp"
+                                 android:textStyle="normal"
+                                 android:background="@drawable/ic_lyt_shimmer"
+                                 android:fontFamily="@font/inter_medium"
+                                 android:layout_height="wrap_content" />
+
+
+                             <LinearLayout
+                                 android:layout_width="match_parent"
+                                 android:layout_height="wrap_content"
+                                 android:layout_marginTop="16dp"
+                                 android:orientation="horizontal">
+
+                                 <TextView
+                                     android:layout_gravity="center"
+                                     android:layout_width="30dp"
+                                     android:textSize="12sp"
+                                     android:fontFamily="@font/inter_regular"
+                                     android:textStyle="normal"
+                                     android:background="@drawable/ic_lyt_shimmer"
+                                     android:layout_height="wrap_content" />
+
+                                 <TextView
+                                     android:layout_gravity="center"
+                                     android:layout_width="match_parent"
+                                     android:textSize="12sp"
+                                     android:layout_marginLeft="4dp"
+                                     android:fontFamily="@font/inter_medium"
+                                     android:textStyle="normal"
+                                     android:layout_weight="1"
+                                     android:background="@drawable/ic_lyt_shimmer"
+                                     android:layout_height="wrap_content" />
+
+                                 <TextView
+                                     android:gravity="right"
+                                     android:layout_width="match_parent"
+                                     android:textSize="12sp"
+                                     android:textStyle="normal"
+                                     android:layout_marginLeft="7dp"
+                                     android:fontFamily="@font/inter_medium"
+                                     android:layout_weight="1"
+                                     android:background="@drawable/ic_lyt_shimmer"
+                                     android:layout_height="wrap_content" />
+
+                             </LinearLayout>
+
+                             <TextView
+                                 android:layout_width="match_parent"
+                                 android:layout_height="1dp"
+                                 android:layout_marginTop="16dp"
+                                 android:background="@drawable/ic_lyt_shimmer"
+                                 />
+
+                         </LinearLayout>
+
+                         <LinearLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:orientation="vertical">
+
+
+                             <TextView
+                                 android:layout_gravity="center"
+                                 android:layout_width="match_parent"
+                                 android:height="40dp"
+                                 android:textSize="13sp"
+                                 android:textStyle="normal"
+                                 android:background="@drawable/ic_lyt_shimmer"
+                                 android:fontFamily="@font/inter_medium"
+                                 android:layout_height="wrap_content" />
+
+
+                             <LinearLayout
+                                 android:layout_width="match_parent"
+                                 android:layout_height="wrap_content"
+                                 android:layout_marginTop="16dp"
+                                 android:orientation="horizontal">
+
+                                 <TextView
+                                     android:layout_gravity="center"
+                                     android:layout_width="30dp"
+                                     android:textSize="12sp"
+                                     android:fontFamily="@font/inter_regular"
+                                     android:textStyle="normal"
+                                     android:background="@drawable/ic_lyt_shimmer"
+                                     android:layout_height="wrap_content" />
+
+                                 <TextView
+                                     android:layout_gravity="center"
+                                     android:layout_width="match_parent"
+                                     android:textSize="12sp"
+                                     android:layout_marginLeft="4dp"
+                                     android:fontFamily="@font/inter_medium"
+                                     android:textStyle="normal"
+                                     android:layout_weight="1"
+                                     android:background="@drawable/ic_lyt_shimmer"
+                                     android:layout_height="wrap_content" />
+
+                                 <TextView
+                                     android:gravity="right"
+                                     android:layout_width="match_parent"
+                                     android:textSize="12sp"
+                                     android:textStyle="normal"
+                                     android:layout_marginLeft="7dp"
+                                     android:fontFamily="@font/inter_medium"
+                                     android:layout_weight="1"
+                                     android:background="@drawable/ic_lyt_shimmer"
+                                     android:layout_height="wrap_content" />
+
+                             </LinearLayout>
+
+                             <TextView
+                                 android:layout_width="match_parent"
+                                 android:layout_height="1dp"
+                                 android:layout_marginTop="16dp"
+                                 android:background="@drawable/ic_lyt_shimmer"
+                                 />
+
+                         </LinearLayout>
+
+                         <LinearLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:orientation="vertical">
+
+
+                             <TextView
+                                 android:layout_gravity="center"
+                                 android:layout_width="match_parent"
+                                 android:height="40dp"
+                                 android:textSize="13sp"
+                                 android:textStyle="normal"
+                                 android:background="@drawable/ic_lyt_shimmer"
+                                 android:fontFamily="@font/inter_medium"
+                                 android:layout_height="wrap_content" />
+
+
+                             <LinearLayout
+                                 android:layout_width="match_parent"
+                                 android:layout_height="wrap_content"
+                                 android:layout_marginTop="16dp"
+                                 android:orientation="horizontal">
+
+                                 <TextView
+                                     android:layout_gravity="center"
+                                     android:layout_width="30dp"
+                                     android:textSize="12sp"
+                                     android:fontFamily="@font/inter_regular"
+                                     android:textStyle="normal"
+                                     android:background="@drawable/ic_lyt_shimmer"
+                                     android:layout_height="wrap_content" />
+
+                                 <TextView
+                                     android:layout_gravity="center"
+                                     android:layout_width="match_parent"
+                                     android:textSize="12sp"
+                                     android:layout_marginLeft="4dp"
+                                     android:fontFamily="@font/inter_medium"
+                                     android:textStyle="normal"
+                                     android:layout_weight="1"
+                                     android:background="@drawable/ic_lyt_shimmer"
+                                     android:layout_height="wrap_content" />
+
+                                 <TextView
+                                     android:gravity="right"
+                                     android:layout_width="match_parent"
+                                     android:textSize="12sp"
+                                     android:textStyle="normal"
+                                     android:layout_marginLeft="7dp"
+                                     android:fontFamily="@font/inter_medium"
+                                     android:layout_weight="1"
+                                     android:background="@drawable/ic_lyt_shimmer"
+                                     android:layout_height="wrap_content" />
+
+                             </LinearLayout>
+
+                             <TextView
+                                 android:layout_width="match_parent"
+                                 android:layout_height="1dp"
+                                 android:layout_marginTop="16dp"
+                                 android:background="@drawable/ic_lyt_shimmer"
+                                 />
+
+                         </LinearLayout>
+
+                         <LinearLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:orientation="vertical">
+
+
+                             <TextView
+                                 android:layout_gravity="center"
+                                 android:layout_width="match_parent"
+                                 android:height="40dp"
+                                 android:textSize="13sp"
+                                 android:textStyle="normal"
+                                 android:background="@drawable/ic_lyt_shimmer"
+                                 android:fontFamily="@font/inter_medium"
+                                 android:layout_height="wrap_content" />
+
+
+                             <LinearLayout
+                                 android:layout_width="match_parent"
+                                 android:layout_height="wrap_content"
+                                 android:layout_marginTop="16dp"
+                                 android:orientation="horizontal">
+
+                                 <TextView
+                                     android:layout_gravity="center"
+                                     android:layout_width="30dp"
+                                     android:textSize="12sp"
+                                     android:fontFamily="@font/inter_regular"
+                                     android:textStyle="normal"
+                                     android:background="@drawable/ic_lyt_shimmer"
+                                     android:layout_height="wrap_content" />
+
+                                 <TextView
+                                     android:layout_gravity="center"
+                                     android:layout_width="match_parent"
+                                     android:textSize="12sp"
+                                     android:layout_marginLeft="4dp"
+                                     android:fontFamily="@font/inter_medium"
+                                     android:textStyle="normal"
+                                     android:layout_weight="1"
+                                     android:background="@drawable/ic_lyt_shimmer"
+                                     android:layout_height="wrap_content" />
+
+                                 <TextView
+                                     android:gravity="right"
+                                     android:layout_width="match_parent"
+                                     android:textSize="12sp"
+                                     android:textStyle="normal"
+                                     android:layout_marginLeft="7dp"
+                                     android:fontFamily="@font/inter_medium"
+                                     android:layout_weight="1"
+                                     android:background="@drawable/ic_lyt_shimmer"
+                                     android:layout_height="wrap_content" />
+
+                             </LinearLayout>
+
+                             <TextView
+                                 android:layout_width="match_parent"
+                                 android:layout_height="1dp"
+                                 android:layout_marginTop="16dp"
+                                 android:background="@drawable/ic_lyt_shimmer"
+                                 />
+
+                         </LinearLayout>
+
+                         <LinearLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:orientation="vertical">
+
+
+                             <TextView
+                                 android:layout_gravity="center"
+                                 android:layout_width="match_parent"
+                                 android:height="40dp"
+                                 android:textSize="13sp"
+                                 android:textStyle="normal"
+                                 android:background="@drawable/ic_lyt_shimmer"
+                                 android:fontFamily="@font/inter_medium"
+                                 android:layout_height="wrap_content" />
+
+
+                             <LinearLayout
+                                 android:layout_width="match_parent"
+                                 android:layout_height="wrap_content"
+                                 android:layout_marginTop="16dp"
+                                 android:orientation="horizontal">
+
+                                 <TextView
+                                     android:layout_gravity="center"
+                                     android:layout_width="30dp"
+                                     android:textSize="12sp"
+                                     android:fontFamily="@font/inter_regular"
+                                     android:textStyle="normal"
+                                     android:background="@drawable/ic_lyt_shimmer"
+                                     android:layout_height="wrap_content" />
+
+                                 <TextView
+                                     android:layout_gravity="center"
+                                     android:layout_width="match_parent"
+                                     android:textSize="12sp"
+                                     android:layout_marginLeft="4dp"
+                                     android:fontFamily="@font/inter_medium"
+                                     android:textStyle="normal"
+                                     android:layout_weight="1"
+                                     android:background="@drawable/ic_lyt_shimmer"
+                                     android:layout_height="wrap_content" />
+
+                                 <TextView
+                                     android:gravity="right"
+                                     android:layout_width="match_parent"
+                                     android:textSize="12sp"
+                                     android:textStyle="normal"
+                                     android:layout_marginLeft="7dp"
+                                     android:fontFamily="@font/inter_medium"
+                                     android:layout_weight="1"
+                                     android:background="@drawable/ic_lyt_shimmer"
+                                     android:layout_height="wrap_content" />
+
+                             </LinearLayout>
+
+                             <TextView
+                                 android:layout_width="match_parent"
+                                 android:layout_height="1dp"
+                                 android:layout_marginTop="16dp"
+                                 android:background="@drawable/ic_lyt_shimmer"
+                                 />
+
+                         </LinearLayout>
+
+                         <LinearLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:orientation="vertical">
+
+
+                             <TextView
+                                 android:layout_gravity="center"
+                                 android:layout_width="match_parent"
+                                 android:height="40dp"
+                                 android:textSize="13sp"
+                                 android:textStyle="normal"
+                                 android:background="@drawable/ic_lyt_shimmer"
+                                 android:fontFamily="@font/inter_medium"
+                                 android:layout_height="wrap_content" />
+
+
+                             <LinearLayout
+                                 android:layout_width="match_parent"
+                                 android:layout_height="wrap_content"
+                                 android:layout_marginTop="16dp"
+                                 android:orientation="horizontal">
+
+                                 <TextView
+                                     android:layout_gravity="center"
+                                     android:layout_width="30dp"
+                                     android:textSize="12sp"
+                                     android:fontFamily="@font/inter_regular"
+                                     android:textStyle="normal"
+                                     android:background="@drawable/ic_lyt_shimmer"
+                                     android:layout_height="wrap_content" />
+
+                                 <TextView
+                                     android:layout_gravity="center"
+                                     android:layout_width="match_parent"
+                                     android:textSize="12sp"
+                                     android:layout_marginLeft="4dp"
+                                     android:fontFamily="@font/inter_medium"
+                                     android:textStyle="normal"
+                                     android:layout_weight="1"
+                                     android:background="@drawable/ic_lyt_shimmer"
+                                     android:layout_height="wrap_content" />
+
+                                 <TextView
+                                     android:gravity="right"
+                                     android:layout_width="match_parent"
+                                     android:textSize="12sp"
+                                     android:textStyle="normal"
+                                     android:layout_marginLeft="7dp"
+                                     android:fontFamily="@font/inter_medium"
+                                     android:layout_weight="1"
+                                     android:background="@drawable/ic_lyt_shimmer"
+                                     android:layout_height="wrap_content" />
+
+                             </LinearLayout>
+
+                             <TextView
+                                 android:layout_width="match_parent"
+                                 android:layout_height="1dp"
+                                 android:layout_marginTop="16dp"
+                                 android:background="@drawable/ic_lyt_shimmer"
+                                 />
+
+                         </LinearLayout>
+
+                     </LinearLayout>
+
+                 </com.facebook.shimmer.ShimmerFrameLayout>
+
+                <TextView
+                    android:id="@+id/txtno_news"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="No news available"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/inter_regular"
+                    android:textSize="14dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</LinearLayout>
