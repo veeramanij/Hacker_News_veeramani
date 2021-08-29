@@ -23,5 +23,8 @@ Hacker News page
 
 WebView showing news URL
 
+Hacker News APK
+https://drive.google.com/file/d/1QX0L0eh-SzU-RYGkzMbR3_7wsMjou6ja/view?usp=sharing
+
 
 
